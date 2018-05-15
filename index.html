@@ -4,43 +4,61 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
-
-    <!-- If you'd like to support IE8 -->
-    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    <script src="https://cdn.bootcss.com/flv.js/1.4.0/flv.min.js"></script>
+    
     <title>Hello, world!</title>
   </head>
   <body>
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col align-self-center">
-     <video id="videoElement" class="video-js" controls preload="auto" style="width: 640px;height: 480px;margin: 5% 25%;"  ></video>
-  </div>
-</div>
-</div>
-  <script>
-    if (flvjs.isSupported()) {
-        var videoElement = document.getElementById('videoElement');
-        var flvPlayer = flvjs.createPlayer({
-            type: 'flv',
-            url: 'ws://185.61.78.113:8000/live/homebook.flv'
-        });
-        flvPlayer.attachMediaElement(videoElement);
-        flvPlayer.load();
-        flvPlayer.play();
-    }
-</script>
-
-  <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+      <div class="row">
+          <script src="https://cdn.bootcss.com/flv.js/1.4.0/flv.min.js"></script>
+          <video id="cam1" width="60%" height="60%"  autoplay="autoplay" controls>
+          </video>
+            <script>
+                if (flvjs.isSupported()) {
+                   var videoElement = document.getElementById('cam1');
+                   var flvPlayer = flvjs.createPlayer({
+                      type: 'flv',
+                       url: 'https://jsserver.ru:8443/live/cam1.flv'
+                    });
+              flvPlayer.attachMediaElement(videoElement);
+              flvPlayer.load();
+              flvPlayer.play();
+                }
+            </script>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+      <div class="row">
+          <script src="https://cdn.bootcss.com/flv.js/1.4.0/flv.min.js"></script>
+          <video id="cam2" width="60%" height="60%"  autoplay="autoplay" controls>
+          </video>
+            <script>
+                if (flvjs.isSupported()) {
+                   var videoElement = document.getElementById('cam2');
+                   var flvPlayer = flvjs.createPlayer({
+                      type: 'flv',
+                       url: 'https://jsserver.ru:8443/live/cam2.flv'
+                    });
+              flvPlayer.attachMediaElement(videoElement);
+              flvPlayer.load();
+              flvPlayer.play();
+                }
+            </script>
+      </div>
+    </div>
+  
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
   </body>
 </html>
